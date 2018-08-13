@@ -11,6 +11,7 @@ class DataInput extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFileUpload = this.handleFileUpload.bind(this);
+    this.handleClear = this.handleClear.bind(this);
   }
 
   handleSubmit(event) {
@@ -35,6 +36,12 @@ class DataInput extends React.Component {
     reader.readAsText(file);
   }
 
+  handleClear(event) {
+    this.setState({
+      data: {}
+    })
+  }
+
   render() {
     console.log('state-------', this.state)
 
@@ -52,7 +59,12 @@ class DataInput extends React.Component {
               <br />
               <input type="text" name="text" />
               <button type="submit">Submit</button>
+              <br />
+              <br />
             </form>
+            <label>Clear data:</label>
+              <br />
+              <button type="clear" onClick={this.handleClear}>Clear</button>
         </div>
 
       <div className="chart-container">
