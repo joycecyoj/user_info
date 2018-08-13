@@ -19,6 +19,7 @@ class DataInput extends React.Component {
     let text = event.target.text.value;
     let dataObj = JSON.parse(text)
     this.setState({ data: dataObj})
+    event.target.reset()
   }
 
   handleFileUpload(event) {
@@ -52,18 +53,17 @@ class DataInput extends React.Component {
             <form onSubmit={this.handleSubmit}>
             <label>1) Choose a file to upload:</label>
             <br />
-            <input type="file" name="file" onChange={this.handleFileUpload}/>
+            {'  '}<input type="file" name="file" onChange={this.handleFileUpload}/>
             <br />
             <p> -Or- </p>
               <label >2) Paste your data here:</label>
               <br />
-              <input type="text" name="text" />
+              <input type="text" name="text" />{'  '}
               <button type="submit">Submit</button>
               <br />
               <br />
             </form>
-            <label>Clear data:</label>
-              <br />
+            <label>Clear data: </label>
               <button type="clear" onClick={this.handleClear}>Clear</button>
         </div>
 
