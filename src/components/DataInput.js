@@ -5,7 +5,7 @@ class DataInput extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      data: {}
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +16,7 @@ class DataInput extends React.Component {
     event.preventDefault();
     let text = event.target.text.value;
     let dataObj = JSON.parse(text)
-    this.setState({ data: dataObj.results })
+    this.setState({ data: dataObj})
   }
 
   handleFileUpload(event) {
@@ -27,7 +27,7 @@ class DataInput extends React.Component {
     reader.onload = function(event) {
       let dataObjFromUpload = event.target.result
       let dataObjJSON = JSON.parse(dataObjFromUpload)
-      this.setState({ data: dataObjJSON.results })
+      this.setState({ data: dataObjJSON })
       // console.log('dataObjJSON =======', dataObjJSON.results)
     }.bind(this);
 
@@ -39,23 +39,21 @@ class DataInput extends React.Component {
 
     return (
       <div className="input-container">
-        {/* <form onSubmit={this.handleFileUpload}> */}
-          <label>Choose a file to upload:</label>
-          <input type="file" name="file" onChange={this.handleFileUpload}/>
+          <div className="form-container">
+            <label>Choose a file to upload:</label>
+            <input type="file" name="file" onChange={this.handleFileUpload}/>
 
-          {/* <button type="submit">Submit</button> */}
-        {/* </form> */}
+            <form onSubmit={this.handleSubmit}>
+              <label>Paste your data here:</label>
+              <input type="text" name="text" />
 
-        <form onSubmit={this.handleSubmit}>
-          <label>Paste your data here:</label>
-          <input type="text" name="text" />
-
-          <button type="submit">Submit</button>
-        </form>
+              <button type="submit">Submit</button>
+            </form>
+        </div>
 
       <div className="chart-container">
         {
-          this.state.data.length > 0 && <Visuals data={ this.state.data } />
+          Object.keys(this.state.data).length > 0 && <Visuals data={ this.state.data } />
         }
       </div>
 

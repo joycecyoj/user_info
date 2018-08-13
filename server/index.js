@@ -1,8 +1,13 @@
 const express = require('express');
+const cors = require('cors')
 const path = require('path');
 const bodyParser = require('body-parser');
 
 const app = express();
+const PORT = 5000;
+app.listen(PORT, () => console.log(`studiously serving silly sounds on port ${PORT}`))
+
+app.use(cors());
 
 // body parsing middleware
 app.use(bodyParser.json());
