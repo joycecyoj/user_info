@@ -38,7 +38,7 @@ class DataInput extends React.Component {
     console.log('state-------', this.state)
 
     return (
-      <div>
+      <div className="input-container">
         {/* <form onSubmit={this.handleFileUpload}> */}
           <label>Choose a file to upload:</label>
           <input type="file" name="file" onChange={this.handleFileUpload}/>
@@ -53,9 +53,11 @@ class DataInput extends React.Component {
           <button type="submit">Submit</button>
         </form>
 
+      <div className="chart-container">
         {
-          this.state.data.length > 0 && <Visuals file={ this.state.data } />
+          this.state.data.length > 0 && <Visuals data={ this.state.data } />
         }
+      </div>
 
       </div>
     );
