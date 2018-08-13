@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Doughnut, Bar, Pie } from 'react-chartjs-2';
+import { Doughnut, Pie } from 'react-chartjs-2';
 import axios from 'axios';
 
 class Visuals extends Component {
@@ -46,8 +46,8 @@ class Visuals extends Component {
               'rgba(255, 159, 64, 0.2)',
               'rgba(255, 99, 132, 0.5)',
               'rgba(54, 162, 235, 0.5)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)',
+              '#25CED1',
+              '#0CF574',
             ],
           },
         ],
@@ -66,8 +66,8 @@ class Visuals extends Component {
               'rgba(255, 159, 64, 0.2)',
               'rgba(255, 99, 132, 0.5)',
               'rgba(54, 162, 235, 0.5)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)',
+              '#E3B505',
+              '#623CEA',
             ],
           },
         ],
@@ -86,8 +86,8 @@ class Visuals extends Component {
               'rgba(255, 159, 64, 0.2)',
               'rgba(255, 99, 132, 0.5)',
               'rgba(54, 162, 235, 0.5)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)',
+              '#25CED1',
+              '#0CF574',
             ],
           },
         ],
@@ -234,7 +234,7 @@ class Visuals extends Component {
       </div>
 
       <div>
-        <Pie
+        <Doughnut
           data={this.state.firstName}
           options={{
             title: {
@@ -249,7 +249,7 @@ class Visuals extends Component {
       </div>
 
       <div>
-        <Pie
+        <Doughnut
           data={this.state.lastName}
           options={{
             title: {
@@ -264,7 +264,7 @@ class Visuals extends Component {
       </div>
 
       <div>
-        <Bar
+        <Pie
           data={this.state.top10states}
           options={{
             title: {
@@ -278,7 +278,7 @@ class Visuals extends Component {
       </div>
 
       <div>
-        <Bar
+        <Pie
           data={this.state.top10statesFemale}
           options={{
             title: {
@@ -292,7 +292,7 @@ class Visuals extends Component {
       </div>
 
       <div>
-        <Bar
+        <Pie
           data={this.state.top10statesMale}
           options={{
             title: {

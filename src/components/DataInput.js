@@ -1,5 +1,6 @@
 import React from 'react';
 import Visuals from './Visuals';
+import { form, label, input, button } from "../App.css"
 
 class DataInput extends React.Component {
   constructor() {
@@ -40,13 +41,16 @@ class DataInput extends React.Component {
     return (
       <div className="input-container">
           <div className="form-container">
-            <label>Choose a file to upload:</label>
-            <input type="file" name="file" onChange={this.handleFileUpload}/>
 
             <form onSubmit={this.handleSubmit}>
-              <label>Paste your data here:</label>
+            <label>1) Choose a file to upload:</label>
+            <br />
+            <input type="file" name="file" onChange={this.handleFileUpload}/>
+            <br />
+            <p> -Or- </p>
+              <label >2) Paste your data here:</label>
+              <br />
               <input type="text" name="text" />
-
               <button type="submit">Submit</button>
             </form>
         </div>
