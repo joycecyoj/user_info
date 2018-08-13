@@ -1,9 +1,14 @@
 const router = require('express').Router()
 module.exports = router;
 
-router.post('/', async(req, res, next) => {
+router.post('/api/info', (req, res, next) => {
   // console.log('req.body', req.body)
   try {
+    const inputData = req.body.data;         // JSON data
+    const inputDataFormat = req.body.format; // JSON, plain text, XML
+
+
+
     const newCampus = await Campus.create({
       name: req.body.name,
       address: req.body.address,
@@ -11,7 +16,7 @@ router.post('/', async(req, res, next) => {
       description: req.body.description
     })
 
-    const campusWithStudents = await Campus.findById(newCampus.id, {
+    const campusWithStudents = Campus.findById(newCampus.id, {
       include: {all: true}
     })
 
