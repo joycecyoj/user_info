@@ -5,15 +5,19 @@
 2. NPM
 
 ## Before you start your app,
-1. Install all dependencies
-```
-npm install
-```
 
-You can start your app by
+
+You can start your front-end by
 ```
+cd client
+npm install
 npm start
 ```
 
+You can start your back-end by
+```
+npm install
+npm start
+```
 
 All Rights Reserved.
