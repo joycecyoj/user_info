@@ -1,5 +1,4 @@
 module.exports = {
-  // 1. Percentage female versus male
   percentageCalculator(data, attribute, target) {
     let total = data.length;
     let targetCount = 0;
@@ -14,8 +13,6 @@ module.exports = {
     ];
   },
 
-  // 2. Percentage of first names that start with A‐M versus N‐Z
-  // 3. Percentage of last names that start with A‐M versus N‐Z
   namePercentage(data, attribute2, target) {
     let total = data.length;
     let targetCount = 0;
@@ -30,11 +27,7 @@ module.exports = {
     ];
   },
 
-  // 4. Percentage of people in each state, up to the top 10 most populous states
-  // 5. Percentage of females in each state, up to the top 10 most populous states
-  // 6. Percentage of males in each state, up to the top 10 most populous states
   statePercentage(data, attribute2, target) {
-    // pass in male, female
     let statesObj = {};
     let statesObjF = {};
     let statesObjM = {};
@@ -89,7 +82,6 @@ module.exports = {
     }
   },
 
-  // 7. Percentage of people in the following age ranges: 0‐20, 21‐40, 41‐60, 61‐80, 81‐100, 100+
   ageRange(data) {
     let total = data.length;
     let ageObj = {
@@ -148,17 +140,13 @@ module.exports = {
 
 }
 
-// helper functions
 function sortProperties(obj, total) {
-  // convert object into array
   var sortable = [];
   for (var key in obj)
     if (obj.hasOwnProperty(key))
-      sortable.push([key, ((obj[key] / total) * 100).toFixed(2)]); // each item is an array in format [key, value]
-
-  // sort items by value
+      sortable.push([key, ((obj[key] / total) * 100).toFixed(2)]);
   sortable.sort(function(a, b) {
-    return b[1] - a[1]; // compare numbers
+    return b[1] - a[1];
   });
-  return sortable; // array in format [ [ key1, val1 ], [ key2, val2 ], ... ]
+  return sortable;
 }

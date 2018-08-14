@@ -22,7 +22,7 @@ class DataInput extends React.Component {
       this.setState({ data: dataObj})
       event.target.reset()
     } else {
-      alert('No data submitted')
+      alert('No data submitted');
     }
   }
 
