@@ -6,7 +6,6 @@ module.exports = router;
 
 router.post('/info', (req, res, next) => {
   try {
-    console.log('req.body===========', req.body)
     const inputData = req.body.results;         // JSON data
     const inputDataFormat = req.body.format;    // JSON, plain text, XML
 

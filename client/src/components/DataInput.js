@@ -35,7 +35,6 @@ class DataInput extends React.Component {
       let dataObjFromUpload = event.target.result
       let dataObjJSON = JSON.parse(dataObjFromUpload)
       this.setState({ data: dataObjJSON })
-      // console.log('dataObjJSON =======', dataObjJSON.results)
     }.bind(this);
 
     reader.readAsText(file);
@@ -48,7 +47,6 @@ class DataInput extends React.Component {
   }
 
   render() {
-    console.log('state-------', this.state)
 
     return (
       <div className="input-container">

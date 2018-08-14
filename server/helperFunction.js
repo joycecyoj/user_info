@@ -1,7 +1,6 @@
 module.exports = {
   // 1. Percentage female versus male
   percentageCalculator(data, attribute, target) {
-    console.log('data', data)
     let total = data.length;
     let targetCount = 0;
     for (let i = 0; i < data.length; i++) {
@@ -81,11 +80,6 @@ module.exports = {
     let top10StatesF = sortedStatesF.slice(0, 10);
     let top10StatesM = sortedStatesM.slice(0, 10);
 
-    console.log('statesObj===============', statesObj);
-    console.log('total===============', total);
-    console.log('sortedStates==========', sortedStates);
-    console.log('top10States===========', top10States);
-
     if (target === 'female') {
       return top10StatesF;
     } else if (target === 'male') {
@@ -123,7 +117,6 @@ module.exports = {
     }
 
     let values = Object.values(ageObj);
-    console.log('values========', values);
     let agePercentage = [];
 
     for (let i = 0; i < values.length; i++) {

@@ -113,10 +113,7 @@ class Visuals extends Component {
   }
 
   componentDidMount() {
-    console.log('props data', this.props.data);
-
     axios.post('/api/info', this.props.data).then(response => {
-      console.log('response from axios===========', response.data);
 
       this.setState({
         gender: {
@@ -197,7 +194,6 @@ class Visuals extends Component {
   };
 
   render() {
-    console.log('state--------', this.state);
 
     return (
       <div className="chart-container">
