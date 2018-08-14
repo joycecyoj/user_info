@@ -4,7 +4,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 5000;
 
 app.use(cors());
 
@@ -27,8 +26,8 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).send(err.message || 'Internal server error');
 });
 
-app.listen(PORT, () =>
-  console.log(`studiously serving silly sounds on port ${PORT}`)
+app.listen(process.env.PORT || 5000, () =>
+  console.log(`server is running`)
 );
 
 module.exports = app;
